@@ -1,0 +1,1 @@
+cmd_/home/oleg/Documents/kernel_learn/lesson2/build_drivr/Module.symvers :=  scripts/mod/modpost -m -a     -o /home/oleg/Documents/kernel_learn/lesson2/build_drivr/Module.symvers -T /home/oleg/Documents/kernel_learn/lesson2/build_drivr/modules.order -i Module.symvers -e 
