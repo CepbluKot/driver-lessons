@@ -1,0 +1,1 @@
+cmd_/home/oleg/Documents/kernel_learn/lesson4/service_build/Module.symvers :=  scripts/mod/modpost -m -a     -o /home/oleg/Documents/kernel_learn/lesson4/service_build/Module.symvers -T /home/oleg/Documents/kernel_learn/lesson4/service_build/modules.order -i Module.symvers -e 

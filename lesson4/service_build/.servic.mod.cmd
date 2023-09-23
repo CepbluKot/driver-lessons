@@ -1,0 +1,1 @@
+cmd_/home/oleg/Documents/kernel_learn/lesson4/service_build/servic.mod := printf '%s\n'   servic.o | awk '!x[$$0]++ { print("/home/oleg/Documents/kernel_learn/lesson4/service_build/"$$0) }' > /home/oleg/Documents/kernel_learn/lesson4/service_build/servic.mod

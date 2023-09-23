@@ -1,0 +1,1 @@
+cmd_/home/oleg/Documents/kernel_learn/lesson4/service_build/modules.order := {   echo /home/oleg/Documents/kernel_learn/lesson4/service_build/servic.o; :; } > /home/oleg/Documents/kernel_learn/lesson4/service_build/modules.order
