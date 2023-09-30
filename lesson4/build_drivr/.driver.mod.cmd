@@ -1,0 +1,1 @@
+cmd_/home/oleg/Documents/kernel_learn/lesson4/build_drivr/driver.mod := printf '%s\n'   driver.o | awk '!x[$$0]++ { print("/home/oleg/Documents/kernel_learn/lesson4/build_drivr/"$$0) }' > /home/oleg/Documents/kernel_learn/lesson4/build_drivr/driver.mod

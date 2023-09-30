@@ -1,0 +1,1 @@
+cmd_/home/oleg/Documents/kernel_learn/lesson4/build_drivr/driver.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/oleg/Documents/kernel_learn/lesson4/build_drivr/driver.ko /home/oleg/Documents/kernel_learn/lesson4/build_drivr/driver.o /home/oleg/Documents/kernel_learn/lesson4/build_drivr/driver.mod.o;  true

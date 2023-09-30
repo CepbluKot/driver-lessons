@@ -1,1 +1,0 @@
-cmd_/home/oleg/Documents/kernel_learn/lesson4/service_build/servic.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/oleg/Documents/kernel_learn/lesson4/service_build/servic.ko /home/oleg/Documents/kernel_learn/lesson4/service_build/servic.o /home/oleg/Documents/kernel_learn/lesson4/service_build/servic.mod.o;  true
