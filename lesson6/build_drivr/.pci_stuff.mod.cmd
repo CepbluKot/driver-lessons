@@ -1,0 +1,1 @@
+cmd_/home/oleg/Documents/kernel_learn/lesson6/build_drivr/pci_stuff.mod := printf '%s\n'   pci_stuff.o | awk '!x[$$0]++ { print("/home/oleg/Documents/kernel_learn/lesson6/build_drivr/"$$0) }' > /home/oleg/Documents/kernel_learn/lesson6/build_drivr/pci_stuff.mod
