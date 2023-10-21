@@ -51,23 +51,17 @@ static struct pci_driver fake_intel_driver = {
     .id_table = intel_pci_tbl,
     .probe = fake_intel_probe,
     .remove = fake_intel_remove
-
-    // /* Power Management hooks */
-    // .driver.pm =	&e100_pm_ops,
-
     // .shutdown =     e100_shutdown,
     // .err_handler = &e100_err_handler,
 };
 
-static int __init fake_intel_init(void)
+int init_module(void)
 {
-
     printk(KERN_INFO "[intel fake driver] I am being inited; \n");
     return pci_register_driver(&fake_intel_driver);
 }
-static void __exit fake_intel_cleanup(void)
+void cleanup_module(void)
 {
-
     printk(KERN_INFO "[intel fake driver] I am being clean up; \n");
     pci_unregister_driver(&fake_intel_driver);
 }

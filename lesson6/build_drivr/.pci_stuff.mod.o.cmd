@@ -3,6 +3,7 @@ cmd_/home/oleg/Documents/kernel_learn/lesson6/build_drivr/pci_stuff.mod.o := gcc
 source_/home/oleg/Documents/kernel_learn/lesson6/build_drivr/pci_stuff.mod.o := /home/oleg/Documents/kernel_learn/lesson6/build_drivr/pci_stuff.mod.c
 
 deps_/home/oleg/Documents/kernel_learn/lesson6/build_drivr/pci_stuff.mod.o := \
+    $(wildcard include/config/MODULE_UNLOAD) \
     $(wildcard include/config/RETPOLINE) \
   include/linux/compiler-version.h \
     $(wildcard include/config/CC_VERSION_TEXT) \
@@ -46,7 +47,6 @@ deps_/home/oleg/Documents/kernel_learn/lesson6/build_drivr/pci_stuff.mod.o := \
     $(wildcard include/config/HAVE_STATIC_CALL_INLINE) \
     $(wildcard include/config/KUNIT) \
     $(wildcard include/config/PRINTK_INDEX) \
-    $(wildcard include/config/MODULE_UNLOAD) \
     $(wildcard include/config/CONSTRUCTORS) \
     $(wildcard include/config/FUNCTION_ERROR_INJECTION) \
   include/linux/list.h \

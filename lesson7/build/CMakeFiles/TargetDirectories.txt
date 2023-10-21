@@ -1,0 +1,3 @@
+/home/oleg/Documents/kernel_learn/lesson7/build/CMakeFiles/test.dir
+/home/oleg/Documents/kernel_learn/lesson7/build/CMakeFiles/edit_cache.dir
+/home/oleg/Documents/kernel_learn/lesson7/build/CMakeFiles/rebuild_cache.dir
