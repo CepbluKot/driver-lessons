@@ -33,6 +33,8 @@ __used __section("__versions") = {
 	{ 0x2aca3546, "pci_disable_device" },
 	{ 0x5b8239ca, "__x86_return_thunk" },
 	{ 0x4896ad3, "pci_request_regions" },
+	{ 0xde80cd09, "ioremap" },
+	{ 0xb19b445, "ioread8" },
 	{ 0xdbef4a92, "__pci_register_driver" },
 	{ 0x9ec8f984, "pci_unregister_driver" },
 	{ 0xbdfb6dbb, "__fentry__" },
@@ -44,4 +46,4 @@ MODULE_INFO(depends, "");
 
 MODULE_ALIAS("pci:v00008086d000015BEsv*sd*bc*sc*i*");
 
-MODULE_INFO(srcversion, "5E359B78F2D9B42E0128105");
+MODULE_INFO(srcversion, "CC23CE1EA9CD221DB5B5D76");
