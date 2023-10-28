@@ -54,25 +54,34 @@ static int fake_intel_probe(struct pci_dev *pdev, const struct pci_device_id *en
     int count = 0;
     bool counting = false;
 
-    for (int i = 0; i < mem_len; i++)
+
+    unsigned int register_data_1;
+    unsigned int register_data_2;
+    unsigned int register_data_3;
+    unsigned int register_data_4;
+    unsigned int register_data_5;
+    unsigned int register_data_6;
+
+    for (int i = 0; i < mem_len - 6; i++)
     {
+        // my mac: f8:75:a4:fc:4e:c8
 
-        register_data = ioread8(logical_address + i);
+        // looking for mac addr
+        register_data_1 = ioread8(logical_address + i);
+        register_data_2 = ioread8(logical_address + i + 1);
+        register_data_3 = ioread8(logical_address + i + 2);
+        register_data_4 = ioread8(logical_address + i + 3);
+        register_data_5 = ioread8(logical_address + i + 4);
+        register_data_6 = ioread8(logical_address + i + 5);
 
-        if (register_data == 0xf8)
-            counting = true;
-
-        if (counting && count < 8)  // looking for mac addr
+        if (register_data_1 == 0xf8 &&
+            register_data_2 == 0x75 &&
+            register_data_3 == 0xa4 &&
+            register_data_4 == 0xfc &&
+            register_data_5 == 0x4e &&
+            register_data_6 == 0xc8)
         {
-            printk(KERN_INFO "[id %i]  looking for MAC = %x \n", i, register_data);
-            count += 1;
-
-            if (count == 7)
-            {
-                printk(KERN_INFO "---- \n");
-                counting = false;
-                count = 0;
-            }
+            printk(KERN_INFO "[found mac from id %i] %x %x %x %x %x %x \n", i, register_data_1, register_data_2, register_data_3, register_data_4, register_data_5, register_data_6);
         }
     }
 
