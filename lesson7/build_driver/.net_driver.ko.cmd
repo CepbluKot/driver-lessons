@@ -1,0 +1,1 @@
+cmd_/home/oleg/Documents/kernel_learn/lesson7/build_driver/net_driver.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/oleg/Documents/kernel_learn/lesson7/build_driver/net_driver.ko /home/oleg/Documents/kernel_learn/lesson7/build_driver/net_driver.o /home/oleg/Documents/kernel_learn/lesson7/build_driver/net_driver.mod.o;  true

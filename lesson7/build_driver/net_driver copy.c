@@ -11,6 +11,7 @@
 #include <linux/fs.h>
 #include <asm/uaccess.h>
 #include <linux/pci.h>
+#include <linux/netdevice.h>
 
 MODULE_LICENSE("GPL");
 
@@ -32,10 +33,7 @@ static int fake_intel_probe(struct pci_dev *pdev, const struct pci_device_id *en
     unsigned int register_data = 0;
     static void *logical_address;
 
-    // ret = pci_enable_device(pdev);
-    // if (ret < 0)
-    //     return ret;
-
+    
     ret = pci_request_regions(pdev, "fake intel driver");
     if (ret < 0)
     {
@@ -55,36 +53,7 @@ static int fake_intel_probe(struct pci_dev *pdev, const struct pci_device_id *en
     bool counting = false;
 
 
-    unsigned int register_data_1;
-    unsigned int register_data_2;
-    unsigned int register_data_3;
-    unsigned int register_data_4;
-    unsigned int register_data_5;
-    unsigned int register_data_6;
-
-    for (int i = 0; i < mem_len - 6; i++)
-    {
-        // my mac: f8:75:a4:fc:4e:c8
-
-        // looking for mac addr
-        register_data_1 = ioread8(logical_address + i);
-        register_data_2 = ioread8(logical_address + i + 1);
-        register_data_3 = ioread8(logical_address + i + 2);
-        register_data_4 = ioread8(logical_address + i + 3);
-        register_data_5 = ioread8(logical_address + i + 4);
-        register_data_6 = ioread8(logical_address + i + 5);
-
-        if (register_data_1 == 0xf8 &&
-            register_data_2 == 0x75 &&
-            register_data_3 == 0xa4 &&
-            register_data_4 == 0xfc &&
-            register_data_5 == 0x4e &&
-            register_data_6 == 0xc8)
-        {
-            printk(KERN_INFO "[found mac from id %i (full size = %i) ] %x %x %x %x %x %x \n", i, mem_len, register_data_1, register_data_2, register_data_3, register_data_4, register_data_5, register_data_6);
-        }
-    }
-
+    
     return 0;
 }
 
@@ -100,8 +69,6 @@ static struct pci_driver fake_intel_driver = {
     .id_table = intel_pci_tbl,
     .probe = fake_intel_probe,
     .remove = fake_intel_remove
-    // .shutdown =     e100_shutdown,
-    // .err_handler = &e100_err_handler,
 };
 
 int init_module(void)

@@ -29,21 +29,18 @@ MODULE_INFO(retpoline, "Y");
 
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
-	{ 0xb560f28, "pci_release_regions" },
-	{ 0x2aca3546, "pci_disable_device" },
 	{ 0x5b8239ca, "__x86_return_thunk" },
-	{ 0x4896ad3, "pci_request_regions" },
-	{ 0xde80cd09, "ioremap" },
-	{ 0xb19b445, "ioread8" },
-	{ 0xdbef4a92, "__pci_register_driver" },
-	{ 0x9ec8f984, "pci_unregister_driver" },
+	{ 0xb961bc5b, "consume_skb" },
+	{ 0x7e05ba14, "alloc_netdev_mqs" },
+	{ 0x70a5ff53, "register_netdev" },
+	{ 0xfe24716a, "unregister_netdev" },
 	{ 0xbdfb6dbb, "__fentry__" },
+	{ 0x2b3b86ab, "ether_setup" },
 	{ 0x122c3a7e, "_printk" },
 	{ 0x453e7dc, "module_layout" },
 };
 
 MODULE_INFO(depends, "");
 
-MODULE_ALIAS("pci:v00008086d000015BEsv*sd*bc*sc*i*");
 
-MODULE_INFO(srcversion, "F286A585712426414F9F7AA");
+MODULE_INFO(srcversion, "C9F636E45837F15083E66B6");

@@ -1,1 +1,0 @@
-/usr/bin/cc -rdynamic CMakeFiles/test.dir/home/oleg/Documents/kernel_learn/lesson7/test.c.o -o test 
