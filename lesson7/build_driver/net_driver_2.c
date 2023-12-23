@@ -17,7 +17,7 @@ static int chriz_open(struct net_device *dev)
             , dev->dev_addr[5]);
 
 	printk(KERN_INFO "fake_net_driver open...\n");
-	// netif_start_queue(dev);
+	netif_start_queue(dev);
 	return 0;
 }
 
@@ -30,7 +30,10 @@ static int chriz_release(struct net_device *dev)
 
 static int chriz_xmit(struct sk_buff *skb, struct net_device *dev)
 {
-	printk(KERN_INFO "fake_net_driver xmit...\n");
+	printk(KERN_INFO "fake_net_driver xmit... %s\n", skb->head);
+	dev->stats.tx_packets += 1;
+dev->stats.tx_bytes += skb->len;
+
 	dev_kfree_skb(skb);
 	return 0;
 }
@@ -63,7 +66,7 @@ static const struct net_device_ops chriz_netdev_ops = {
 	.ndo_open = chriz_open,
 	.ndo_stop = chriz_release,
 	.ndo_set_mac_address = my_set_mac_address,
-	// .ndo_start_xmit = chriz_xmit,
+	.ndo_start_xmit = chriz_xmit,
 	// .ndo_do_ioctl = chriz_ioctl,
 };
 
