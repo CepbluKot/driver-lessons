@@ -1,1 +1,0 @@
-cmd_/home/oleg/Documents/kernel_learn/lesson7/build_driver/net_driver.mod := printf '%s\n'   net_driver.o | awk '!x[$$0]++ { print("/home/oleg/Documents/kernel_learn/lesson7/build_driver/"$$0) }' > /home/oleg/Documents/kernel_learn/lesson7/build_driver/net_driver.mod
