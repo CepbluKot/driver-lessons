@@ -30,7 +30,17 @@ static int chriz_release(struct net_device *dev)
 
 static int chriz_xmit(struct sk_buff *skb, struct net_device *dev)
 {
-	printk(KERN_INFO "fake_net_driver xmit... %s\n", skb->head);
+	unsigned char *data = skb->data;
+	printk(KERN_INFO "fake_net_driver xmit... \n");
+	
+	for(int i = 0 ; i < sizeof( data ) / sizeof(char); i++)
+	{
+		printk(KERN_INFO "%c\n", data[i]);
+	
+	}
+	
+	printk(KERN_INFO "%s \n", data);
+	
 	dev->stats.tx_packets += 1;
 dev->stats.tx_bytes += skb->len;
 
